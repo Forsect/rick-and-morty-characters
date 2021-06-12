@@ -4,7 +4,7 @@ Showcase Project - React, TypeScript, Redux (thunk and createSlice), GraphQL and
 
 ## Demo
 
-Project is available at TBD
+Project is available at [Link](https://rick-and-morty-characters-delta.vercel.app/)
 
 ## Start
 
