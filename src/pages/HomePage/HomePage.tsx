@@ -32,7 +32,7 @@ const HomePage = () => {
         ))}
       </Styles.Cards>
       <Pagination
-        size="large"
+        size="small"
         count={pagesAmount}
         page={selectedPage}
         onChange={(_, page) => selectPage(page)}

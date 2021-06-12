@@ -7,7 +7,7 @@ import services from "store/services";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { IconButton } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
-import { DataGrid, GridColDef } from "@material-ui/data-grid";
+import { GridColDef } from "@material-ui/data-grid";
 import { Skeleton } from "@material-ui/lab";
 
 const DetailsPage = () => {

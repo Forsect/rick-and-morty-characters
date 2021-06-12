@@ -1,3 +1,4 @@
+import { MEDIA_QUERIES } from "shared/mediaQueries";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -7,6 +8,9 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 24px;
+  ${MEDIA_QUERIES.md} {
+    padding: 16px 0;
+  }
 `;
 
 export const Cards = styled.div`
