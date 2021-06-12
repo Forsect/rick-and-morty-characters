@@ -17,7 +17,7 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(services.actions.characters.getCharacters({ page: selectedPage, name: searchCharacterName }));
     // eslint-disable-next-line
-  }, [selectedPage, searchCharacterName]);
+  }, [selectedPage]);
 
   const selectPage = (page: number) => {
     dispatch(services.actions.characters.setCurrentPage(page));
@@ -37,7 +37,7 @@ const HomePage = () => {
         page={selectedPage}
         onChange={(_, page) => selectPage(page)}
         color="primary"
-      ></Pagination>
+      />
     </Styles.Container>
   );
 };

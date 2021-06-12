@@ -13,6 +13,6 @@ export const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 1300px;
+  max-width: 1300px;
   margin-bottom: 40px;
 `;

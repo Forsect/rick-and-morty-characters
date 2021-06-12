@@ -1,17 +1,26 @@
 import * as Styles from "./SearchInput.styles";
 import { IconButton, InputBase } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "store";
 import services from "store/services";
+import { toast, Toaster } from "react-hot-toast";
 
 const SearchInput = () => {
-  const [searchText, setSearchText] = useState("");
+  const searchCharacterName = useSelector(services.selectors.characters.selectSearchCharacterName);
+  const selectedPage = useSelector(services.selectors.characters.selectCurrentPage);
   const dispatch = useDispatch<Dispatch>();
 
   const onSubmit = () => {
-    dispatch(services.actions.characters.setSearchCharacterName(searchText));
+    dispatch(services.actions.characters.getCharacters({ page: selectedPage, name: searchCharacterName })).then((x) => {
+      if (services.actions.characters.getCharacters.rejected.match(x)) {
+        toast.error("Character was not found!", { position: "top-right" });
+      }
+    });
+  };
+
+  const onTextChange = (text: string) => {
+    dispatch(services.actions.characters.setSearchCharacterName(text));
   };
 
   return (
@@ -21,11 +30,13 @@ const SearchInput = () => {
         onKeyPress={(e) => {
           e.key === "Enter" && onSubmit();
         }}
-        onChange={(e) => setSearchText(e.currentTarget.value)}
+        value={searchCharacterName}
+        onChange={(e) => onTextChange(e.currentTarget.value)}
       />
       <IconButton onClick={onSubmit}>
         <SearchIcon />
       </IconButton>
+      <Toaster />
     </Styles.Container>
   );
 };

@@ -15,3 +15,7 @@ export const selectCharacters = (store: RootState) => {
 export const selectSearchCharacterName = (store: RootState) => {
   return store.characters.searchCharacterName;
 };
+
+export const selectCharacterDetailsById = (id: string) => (store: RootState) => {
+  return store.characters.characterDetails.find((x) => x.id === id);
+};

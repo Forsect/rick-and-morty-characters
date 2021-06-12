@@ -13,7 +13,7 @@ const Routes = () => {
     <Suspense fallback={<LoadingScreen />}>
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route exact path="/details" component={DetailsPage} />
+        <Route exact path="/details/:id" component={DetailsPage} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>

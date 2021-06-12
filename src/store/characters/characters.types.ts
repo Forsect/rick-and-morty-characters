@@ -1,4 +1,4 @@
-import { Character } from "shared/types";
+import { Character, CharacterDetails } from "shared/types";
 
 export interface CharactersResult {
   characters: {
@@ -10,8 +10,13 @@ export interface CharactersResult {
   };
 }
 
+export interface CharacterDetailsResult {
+  character: CharacterDetails;
+}
+
 export interface InitialState {
   characters: Character[];
+  characterDetails: CharacterDetails[];
   pagesAmount: number;
   currentPage: number;
   searchCharacterName: string;

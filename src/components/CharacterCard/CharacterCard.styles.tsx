@@ -32,7 +32,7 @@ export const Info = styled.div`
   padding: 10px;
 `;
 
-export const Bold = styled(Typography)<{}>`
+export const Bold = styled(Typography)`
   font-weight: bold;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -40,7 +40,7 @@ export const Bold = styled(Typography)<{}>`
   overflow: hidden;
 `;
 
-export const CharacterTooltip = styled(({ className, theme, ...props }) => (
+export const CharacterTooltip = styled(({ className, ...props }) => (
   <Tooltip enterNextDelay={500} arrow {...props} classes={{ popper: className }} />
 ))`
   & .MuiTooltip-tooltip {
