@@ -1,6 +1,13 @@
 import { Paper, Typography, Tooltip } from "@material-ui/core";
 import styled from "styled-components";
 
+export const Container = styled.div`
+  transition: transform 0.2s;
+  &:hover {
+    transform: scale(1.2);
+  }
+`;
+
 export const Card = styled(Paper)`
   display: flex;
   flex-direction: column;

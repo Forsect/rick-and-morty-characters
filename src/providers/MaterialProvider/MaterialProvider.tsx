@@ -21,6 +21,15 @@ const theme = createMuiTheme({
     },
     background: { default: "#97d4d5" },
   },
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        html: {
+          overflowY: "scroll",
+        },
+      },
+    },
+  },
 });
 
 const MaterialProvider = ({ children }: Types.Props) => {

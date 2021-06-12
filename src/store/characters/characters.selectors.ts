@@ -11,3 +11,7 @@ export const selectCurrentPage = (store: RootState) => {
 export const selectCharacters = (store: RootState) => {
   return store.characters.characters;
 };
+
+export const selectSearchCharacterName = (store: RootState) => {
+  return store.characters.searchCharacterName;
+};

@@ -14,4 +14,5 @@ export const Cards = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   width: 1300px;
+  margin-bottom: 40px;
 `;

@@ -14,4 +14,10 @@ export interface InitialState {
   characters: Character[];
   pagesAmount: number;
   currentPage: number;
+  searchCharacterName: string;
+}
+
+export interface GetCharactersRequest {
+  page: number;
+  name: string;
 }
