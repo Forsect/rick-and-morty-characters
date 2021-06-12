@@ -1,7 +1,7 @@
 import * as Types from "./DetailsPage.types";
-import * as Styles from "./DetailsPage.styles";
+// import * as Styles from "./DetailsPage.styles";
 
-const DetailsPage = ({}: Types.Props) => {
+const DetailsPage = ({ id }: Types.Props) => {
   return <></>;
 };
 

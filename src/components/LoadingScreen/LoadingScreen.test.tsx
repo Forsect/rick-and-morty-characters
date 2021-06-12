@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
-import DetailsPage from "./DetailsPage";
+import LoadingScreen from "./LoadingScreen";
 
 it("Should render with no errors", () => {
-  render(<DetailsPage />);
+  render(<LoadingScreen />);
 });
