@@ -11,6 +11,12 @@ import { GridColDef } from "@material-ui/data-grid";
 import { Skeleton } from "@material-ui/lab";
 import { Grow } from "@material-ui/core";
 
+const columns: GridColDef[] = [
+  { field: "episode", headerName: "Episode", width: 110 },
+  { field: "air_date", headerName: "Date", width: 170, sortable: false },
+  { field: "name", headerName: "Name", width: 300 },
+];
+
 const DetailsPage = () => {
   const { id } = useParams<{ id: string }>();
   const history = useHistory();
@@ -31,12 +37,6 @@ const DetailsPage = () => {
     });
     // eslint-disable-next-line
   }, []);
-
-  const columns: GridColDef[] = [
-    { field: "episode", headerName: "Episode", width: 110 },
-    { field: "air_date", headerName: "Date", width: 170, sortable: false },
-    { field: "name", headerName: "Name", width: 300 },
-  ];
 
   return (
     <Grow timeout={300} in={true} disableStrictModeCompat>

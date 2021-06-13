@@ -26,6 +26,11 @@ export const charactersSlice = createSlice({
       state.pagesAmount = action.payload.characters.info.pages;
       state.characters = action.payload.characters.results;
     },
+    [getCharacters.rejected.type]: (state, _) => {
+      state.characters = [];
+      state.pagesAmount = 1;
+      state.currentPage = 1;
+    },
     [getCharacterDetails.fulfilled.type]: (state, action: PayloadAction<Types.CharacterDetailsResult>) => {
       if (state.characterDetails.find((x) => x.id === action.payload.character.id)) {
         state.characterDetails = state.characterDetails.map((x) =>
