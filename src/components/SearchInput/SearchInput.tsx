@@ -5,16 +5,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "store";
 import services from "store/services";
 import { toast, Toaster } from "react-hot-toast";
+import { useState } from "react";
 
 const SearchInput = () => {
+  const [lastFoundCharacter, setLastFoundCharacter] = useState("");
   const searchCharacterName = useSelector(services.selectors.characters.selectSearchCharacterName);
-  const selectedPage = useSelector(services.selectors.characters.selectCurrentPage);
   const dispatch = useDispatch<Dispatch>();
 
   const onSubmit = () => {
-    dispatch(services.actions.characters.getCharacters({ page: selectedPage, name: searchCharacterName })).then((x) => {
+    dispatch(services.actions.characters.getCharacters({ page: 1, name: searchCharacterName })).then((x) => {
       if (services.actions.characters.getCharacters.rejected.match(x)) {
-        toast.error("Character was not found!", { position: "top-right" });
+        toast.error(`Character "${searchCharacterName}" was not found!`, { position: "bottom-center" });
+        dispatch(services.actions.characters.setSearchCharacterName(lastFoundCharacter));
+        return;
+      }
+
+      if (services.actions.characters.getCharacters.fulfilled.match(x)) {
+        dispatch(services.actions.characters.setCurrentPage(1));
+        setLastFoundCharacter(searchCharacterName);
       }
     });
   };

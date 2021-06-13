@@ -4,7 +4,7 @@ import * as Styles from "./LoadingScreen.styles";
 const LoadingScreen = () => {
   return (
     <Styles.Container>
-      <CircularProgress />
+      <CircularProgress size={64} thickness={6} />
     </Styles.Container>
   );
 };

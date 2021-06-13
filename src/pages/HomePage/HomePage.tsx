@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "store";
 import services from "store/services";
-import Pagination from "@material-ui/lab/Pagination";
 import CharacterCard from "components/CharacterCard";
 import SearchInput from "components/SearchInput";
 
@@ -19,8 +18,12 @@ const HomePage = () => {
     // eslint-disable-next-line
   }, [selectedPage]);
 
-  const selectPage = (page: number) => {
+  const onPageChange = (_: React.ChangeEvent<unknown>, page: number) => {
     dispatch(services.actions.characters.setCurrentPage(page));
+    window.scrollTo({
+      top: 0,
+      behavior: "auto",
+    });
   };
 
   return (
@@ -31,13 +34,7 @@ const HomePage = () => {
           <CharacterCard key={character.id} character={character} />
         ))}
       </Styles.Cards>
-      <Pagination
-        size="small"
-        count={pagesAmount}
-        page={selectedPage}
-        onChange={(_, page) => selectPage(page)}
-        color="primary"
-      />
+      <Styles.Pages count={pagesAmount} page={selectedPage} onChange={onPageChange} color="primary" />
     </Styles.Container>
   );
 };

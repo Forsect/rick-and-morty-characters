@@ -27,6 +27,15 @@ const theme = createMuiTheme({
         html: {
           overflowY: "scroll",
         },
+        "*::-webkit-scrollbar": {
+          width: 6,
+          height: 6,
+        },
+        "*::-webkit-scrollbar-thumb": {
+          borderRadius: 10,
+          "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,.3)",
+          backgroundColor: "#aaa",
+        },
       },
     },
   },
