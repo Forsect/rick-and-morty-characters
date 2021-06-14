@@ -31,13 +31,13 @@ export const BackIconContainer = styled.div`
 export const Card = styled(Paper)`
   display: flex;
   width: 1024px;
-  height: 600px;
+  height: 650px;
   border-radius: 12px;
   margin: 8px 0;
 
   ${MEDIA_QUERIES.xl} {
     width: 900px;
-    height: 550px;
+    height: 600px;
   }
 
   ${MEDIA_QUERIES.lg} {
@@ -62,8 +62,8 @@ const avatarStyles = css`
   }
 
   ${MEDIA_QUERIES.lg} {
-    width: 250px;
-    height: 250px;
+    width: 280px;
+    height: 280px;
   }
 
   ${MEDIA_QUERIES.md} {
@@ -83,7 +83,7 @@ export const Details = styled.div`
   flex: 1;
   flex-direction: column;
   justify-content: space-evenly;
-  padding-bottom: 16px;
+  padding-bottom: 8px;
 
   ${MEDIA_QUERIES.xl} {
     width: 300px;
@@ -106,17 +106,15 @@ export const Bold = styled(Typography)`
 `;
 
 export const Header = styled(Typography)`
-  ${MEDIA_QUERIES.xl} {
-    font-size: 14px;
-  }
+  font-size: 14px;
 `;
 
 export const NameHeader = styled(Bold)`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0px 8px;
-  font-size: 24px;
+  padding: 0px 8px 8px 8px;
+  font-size: 22px;
 
   ${MEDIA_QUERIES.xl} {
     font-size: 20px;
